@@ -24,13 +24,15 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $this->validate($request,
-        [
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-            'img' => 'required|mimes:jpg,jpeg,png,gif',
-        ]);
+        $validatedData = $this->validate(
+            $request,
+            [
+                'title' => 'required',
+                'description' => 'required',
+                'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+                'img' => 'required|mimes:jpg,jpeg,png,gif',
+            ]
+        );
 
         $product = new Product();
         $product['title'] = $validatedData['title'];
@@ -57,13 +59,15 @@ class ProductsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validatedData = $this->validate($request,
-                        [
-                            'title' => 'required',
-                            'description' => 'required',
-                            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-                            'img' => 'required|mimes:jpg,jpeg,png,gif',
-                        ]);
+        $validatedData = $this->validate(
+            $request,
+            [
+                'title' => 'required',
+                'description' => 'required',
+                'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+                'img' => 'required|mimes:jpg,jpeg,png,gif',
+            ]
+        );
 
         $product = Product::find($id);
         if ($product) {

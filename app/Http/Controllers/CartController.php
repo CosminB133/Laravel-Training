@@ -19,9 +19,12 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        $this->validate($request, [
-            'id' => 'required|exists:products,id'
-        ]);
+        $this->validate(
+            $request,
+            [
+                'id' => 'required|exists:products,id'
+            ]
+        );
 
         if ($request->session()->has('cart')) {
             $request->session()->push('cart', $request['id']);
@@ -33,9 +36,12 @@ class CartController extends Controller
 
     public function removeFromCart(Request $request)
     {
-        $this->validate($request, [
-            'id' => 'required|exists:products,id'
-        ]);
+        $this->validate(
+            $request,
+            [
+                'id' => 'required|exists:products,id'
+            ]
+        );
 
         if ($request->session()->has('cart')) {
             $cart = $request->session()->get('cart');

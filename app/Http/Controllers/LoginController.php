@@ -13,13 +13,16 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
-            'username' => 'required',
-            'password'=> 'required',
-        ]);
+        $validatedData = $this->validate(
+            $request,
+            [
+                'username' => 'required',
+                'password' => 'required',
+            ]
+        );
         if (
-            config('services.admin.user') == $request['username']
-            && config('services.admin.pass') == $request['password']
+            config('services.admin.user') == $validatedData['username']
+            && config('services.admin.pass') == $validatedData['password']
         ) {
             $request->session()->put('auth', true);
             return redirect('/products');
