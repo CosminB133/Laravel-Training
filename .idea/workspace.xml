@@ -24,11 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="Initail Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +182,7 @@
       <workItem from="1599219675629" duration="13427000" />
       <workItem from="1599244762714" duration="1749000" />
       <workItem from="1599466625402" duration="3400000" />
-      <workItem from="1599470554395" duration="12599000" />
+      <workItem from="1599470554395" duration="13657000" />
     </task>
     <task id="LOCAL-00001" summary="Initail Commit">
       <created>1599470629645</created>
@@ -200,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599482517286</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initail Commit">
+      <created>1599483979070</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599483979070</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,10 +247,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2599" y="225" width="552" height="582" key="RollbackChangesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599482041887" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1599482522160">
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1599484008004">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599482522160" />
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599484008004" />
     <state x="152" y="0" width="1436" height="825" maximized="true" key="dock-window-1" timestamp="1599480511222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,15 +259,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="228" y="151" width="1436" height="707" maximized="true" key="dock-window-2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599481443332" />
+    <state x="82" y="82" width="1552" height="667" maximized="true" key="dock-window-3" timestamp="1599484553800">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="82" y="82" width="1552" height="667" maximized="true" key="dock-window-3/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599484553800" />
     <state x="2544" y="238" key="run.anything.popup" timestamp="1599225943166">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2544" y="238" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599225943166" />
-    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup" timestamp="1599477399692">
+    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup" timestamp="1599484388493">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="238" width="672" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599246225899" />
     <state x="623" y="238" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1599211824127" />
-    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599477399692" />
+    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599484388493" />
   </component>
 </project>

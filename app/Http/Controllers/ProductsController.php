@@ -24,7 +24,7 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,
+        $validatedData = $this->validate($request,
         [
             'title' => 'required',
             'description' => 'required',
@@ -33,13 +33,13 @@ class ProductsController extends Controller
         ]);
 
         $product = new Product();
-        $product['title'] = $request['title'];
-        $product['description'] = $request['description'];
-        $product['price'] = $request['price'];
+        $product['title'] = $validatedData['title'];
+        $product['description'] = $validatedData['description'];
+        $product['price'] = $validatedData['price'];
         $product->save();
 
         $path = public_path() . '/img/';
-        $request['img']->move($path, $product->id);
+        $validatedData['img']->move($path, $product->id);
 
         return redirect('/products');
     }
@@ -57,7 +57,7 @@ class ProductsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,
+        $validatedData = $this->validate($request,
                         [
                             'title' => 'required',
                             'description' => 'required',
@@ -67,12 +67,12 @@ class ProductsController extends Controller
 
         $product = Product::find($id);
         if ($product) {
-            $product['title'] = $request['title'];
-            $product['description'] = $request['description'];
-            $product['price'] = $request['price'];
+            $product['title'] = $validatedData['title'];
+            $product['description'] = $validatedData['description'];
+            $product['price'] = $validatedData['price'];
             $product->save();
 
-            $request['img']->move(public_path() . '/img/', $product->id);
+            $validatedData['img']->move(public_path() . '/img/', $product->id);
         }
 
         return redirect('/products');

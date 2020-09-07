@@ -19,7 +19,7 @@ Route::post('/', 'CartController@addToCart');
 Route::get('/cart', 'CartController@index');
 Route::post('/cart', 'CartController@removeFromCart');
 
-Route::resource('/products', 'ProductController')->except(['show'])->middleware('logged');
+Route::resource('/products', 'ProductsController')->except(['show'])->middleware('logged');
 
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
