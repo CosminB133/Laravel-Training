@@ -9,8 +9,8 @@
 
             </div>
             <div class="col-md-6">
-                <h4>{{ $product['title'] }}</h4>
-                <p>{{ $product['description'] }}</p>
+                <h4>{{$product['title']}}</h4>
+                <p>{{$product['description']}}</p>
             </div>
             <div class="col-md-3">
                 <form action="/" method="post">

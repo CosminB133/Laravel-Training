@@ -23,6 +23,6 @@
             <input type="file" name="img" id="img" class="form-control-file" >
         </div>
         <input type="hidden" name="_method" value="patch">
-        <input type="submit" class="btn btn-primary">
+        <input type="submit" class="btn btn-primary" value="{{trans('Submit')}}">
     </form>
 @endsection
