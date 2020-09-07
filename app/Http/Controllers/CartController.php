@@ -37,10 +37,13 @@ class CartController extends Controller
             'id' => 'required|exists:products,id'
         ]);
 
-        $cart = $request->session()->get('cart');
-        $index = array_search($request['id'], $cart);
-        array_splice($cart, $index, 1);
-        $request->session()->put('cart', $cart);
+        if ($request->session()->has('cart')) {
+            $cart = $request->session()->get('cart');
+            $index = array_search($request['id'], $cart);
+            array_splice($cart, $index, 1);
+            $request->session()->put('cart', $cart);
+        }
+
         return redirect('/cart');
     }
 }

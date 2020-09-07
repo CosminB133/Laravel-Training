@@ -24,6 +24,6 @@ class LoginController extends Controller
             $request->session()->put('auth', true);
             return redirect('/products');
         }
-        return redirect('/login');
+        return redirect('/login')->withErrors(['failed_login' => 'Wrong username or password!']);
     }
 }

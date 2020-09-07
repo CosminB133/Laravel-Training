@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Element;
 use PhpParser\Node\Expr\PostDec;
 
 class ProductsController extends Controller
@@ -38,7 +39,7 @@ class ProductsController extends Controller
         $product->save();
 
         $path = public_path() . '/img/';
-        $request->img->move($path, $product->id);
+        $request['img']->move($path, $product->id);
 
         return redirect('/products');
     }
@@ -47,6 +48,9 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+        if (!$product) {
+            return redirect('products');
+        }
         return view('products.edit', ['product' => $product]);
     }
 
@@ -62,12 +66,14 @@ class ProductsController extends Controller
                         ]);
 
         $product = Product::find($id);
-        $product['title'] = $request['title'];
-        $product['description'] = $request['description'];
-        $product['price'] = $request['price'];
-        $product->save();
+        if ($product) {
+            $product['title'] = $request['title'];
+            $product['description'] = $request['description'];
+            $product['price'] = $request['price'];
+            $product->save();
 
-        $request->img->move(public_path() . '/img/', $product->id);
+            $request['img']->move(public_path() . '/img/', $product->id);
+        }
 
         return redirect('/products');
     }

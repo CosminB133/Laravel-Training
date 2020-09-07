@@ -3,8 +3,40 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="" />
+    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="Initail Commit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_07_122226_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +45,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -126,6 +161,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="/opt/lampp/htdocs/training" />
@@ -155,38 +191,78 @@
       <workItem from="1599219675629" duration="13427000" />
       <workItem from="1599244762714" duration="1749000" />
       <workItem from="1599466625402" duration="3400000" />
+      <workItem from="1599470554395" duration="11537000" />
     </task>
+    <task id="LOCAL-00001" summary="Initail Commit">
+      <created>1599470629645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599470629645</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initail Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initail Commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2642" y="324" width="465" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599227137429">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2642" y="324" width="465" height="384" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599227137429" />
+    <state x="2535" y="0" width="670" height="1040" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599479934840">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2535" y="0" width="670" height="1040" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599479934840" />
     <state x="2613" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599216217862">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2613" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599216217862" />
-    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl" timestamp="1599469298752">
+    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl" timestamp="1599472894056">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599469298752" />
-    <state x="25" y="0" width="1444" height="710" key="dock-window-1" timestamp="1599221835040">
+    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599472894056" />
+    <state x="2599" y="225" width="552" height="582" key="RollbackChangesDialog" timestamp="1599482041887">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2599" y="225" width="552" height="582" key="RollbackChangesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599482041887" />
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1599470636773">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599470636773" />
+    <state x="152" y="0" width="1436" height="825" maximized="true" key="dock-window-1" timestamp="1599480511222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="25" y="0" width="1444" height="710" key="dock-window-1/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599221835040" />
+    <state x="152" y="0" width="1436" height="825" maximized="true" key="dock-window-1/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599480511222" />
+    <state x="228" y="151" width="1436" height="707" maximized="true" key="dock-window-2" timestamp="1599481443332">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="228" y="151" width="1436" height="707" maximized="true" key="dock-window-2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599481443332" />
     <state x="2544" y="238" key="run.anything.popup" timestamp="1599225943166">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2544" y="238" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599225943166" />
-    <state x="2543" y="247" width="672" height="705" key="search.everywhere.popup" timestamp="1599468253472">
+    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup" timestamp="1599477399692">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="238" width="672" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599246225899" />
     <state x="623" y="238" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1599211824127" />
-    <state x="2543" y="247" width="672" height="705" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599468253472" />
+    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599477399692" />
   </component>
 </project>
