@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'IndexController@index');
 
-Route::post('/cart', 'CartController@addToCart');
 Route::get('/cart', 'CartController@index');
+Route::post('/cart', 'CartController@addToCart');
 Route::delete('/cart', 'CartController@removeFromCart');
 
 Route::resource('/products', 'ProductsController')->except(['show'])->middleware('logged');
