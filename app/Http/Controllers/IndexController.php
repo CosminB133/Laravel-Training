@@ -7,13 +7,9 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
-        if (session('cart')) {
-            $products = Product::whereNotIn('id', session('cart'))->get();
-        } else {
-            $products = Product::all();
-        }
+        $products = session('cart') ? Product::whereNotIn('id', session('cart'))->get() : Product::all();
         return view('index', ['products' => $products]);
     }
 }

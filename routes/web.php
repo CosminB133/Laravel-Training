@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'IndexController');
+Route::get('/', 'IndexController@index');
 
-Route::post('/', 'CartController@addToCart');
+Route::post('/cart', 'CartController@addToCart');
 Route::get('/cart', 'CartController@index');
-Route::post('/cart', 'CartController@removeFromCart');
+Route::delete('/cart', 'CartController@removeFromCart');
 
 Route::resource('/products', 'ProductsController')->except(['show'])->middleware('logged');
 

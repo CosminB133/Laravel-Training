@@ -9,11 +9,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        if (session('cart')) {
-            $products = Product::whereIn('id', session('cart'))->get();
-        } else {
-            $products = [];
-        }
+        $products = session('cart') ? Product::whereIn('id', session('cart'))->get() : [];
         return view('cart', ['products' => $products]);
     }
 
@@ -27,9 +23,11 @@ class CartController extends Controller
         );
 
         if ($request->session()->has('cart')) {
-            $request->session()->push('cart', $request['id']);
+            if (in_array($request->id, $request->session()->get('cart'))) {
+                $request->session()->push('cart', $request->id);
+            }
         } else {
-            $request->session()->put('cart', [$request['id']]);
+            $request->session()->put('cart', [$request->id]);
         }
         return redirect('/');
     }
@@ -45,8 +43,11 @@ class CartController extends Controller
 
         if ($request->session()->has('cart')) {
             $cart = $request->session()->get('cart');
-            $index = array_search($request['id'], $cart);
-            array_splice($cart, $index, 1);
+            array_splice(
+                $cart,
+                array_search($request->id, $cart),
+                1
+            );
             $request->session()->put('cart', $cart);
         }
 

@@ -10,7 +10,8 @@ class OrdersController extends Controller
 
     public function index()
     {
-        //
+        $orders = Order::all();
+        return view('orders.index');
     }
 
     public function store(Request $request)
@@ -24,9 +25,9 @@ class OrdersController extends Controller
             ]
         );
         $order = new Order();
-        $order['name'] = $validatedData['name'];
-        $order['comment'] = $validatedData['comment'];
-        $order['contact'] = $validatedData['contact'];
+        $order->name = $validatedData->name;
+        $order->comment = $validatedData->comment;
+        $order->contact = $validatedData->contact;
         $order->save();
 
         return redirect('index');
