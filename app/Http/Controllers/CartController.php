@@ -23,7 +23,7 @@ class CartController extends Controller
         );
 
         if ($request->session()->has('cart')) {
-            if (in_array($request->id, $request->session()->get('cart'))) {
+            if (!in_array($request->id, $request->session()->get('cart'))) {
                 $request->session()->push('cart', $request->id);
             }
         } else {
