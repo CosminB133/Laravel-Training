@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('name');
             $table->string('contact');
             $table->string('comments');
+            $table->float('price');
             $table->timestamps();
         });
     }
