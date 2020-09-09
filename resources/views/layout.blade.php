@@ -16,12 +16,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ config('app.name') }}</title>
-
 </head>
 <body>
 <div class="container">
+    @include('inc.nav')
     @include('inc.messages')
     @yield('content')
 </div>

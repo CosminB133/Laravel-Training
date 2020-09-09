@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <form action="/login" method="post">
+    <form action="{{ url('/login') }}" method="post">
         @csrf
         <div class="form-group">
             <label for="username">{{ trans('User') }}</label>
