@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Validator;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrdersController extends Controller
 {
@@ -11,7 +14,7 @@ class OrdersController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('orders.index');
+        return view('orders.index', ['orders' => $orders]);
     }
 
     public function store(Request $request)
@@ -20,23 +23,47 @@ class OrdersController extends Controller
             $request,
             [
                 'name' => 'required',
-                'comment' => 'required',
+                'comments' => 'required',
                 'contact' => 'required',
             ]
         );
+
+        if (!$request->session()->get('cart')) {
+            $request->flash();
+            return redirect('/cart')->withErrors(['empty_cart' => 'Cart is empty!']);
+        }
+
+        $products = array_map('App\Product::find', $request->session()->get('cart'));
+        $orderPrice = array_reduce(
+            $products,
+            function ($sum, $product) {
+                return $sum + $product->price;
+            }
+        );
         $order = new Order();
-        $order->name = $validatedData->name;
-        $order->comment = $validatedData->comment;
-        $order->contact = $validatedData->contact;
+        $order->name = $request->name;
+        $order->comments = $request['comments'];
+        $order->contact = $request['contact'];
+        $order->price = $orderPrice;
         $order->save();
 
-        return redirect('index');
+        foreach ($products as $product) {
+            $order->products()->attach([$product->id => ['price' => $product->price]]);
+        }
+
+        Mail::send(
+            'orders.show',
+            ['order' => $order],
+            function ($message) {
+                $message->to(config('services.admin.email'))->subject('Order');
+            }
+        );
+        return redirect('/cart');
     }
 
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        return view('orders.show', ['order' => $order]);
     }
-
-
 }

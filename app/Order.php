@@ -8,6 +8,6 @@ class Order extends Model
 {
     public function products()
     {
-        return $this->hasMany('App\Post');
+        return $this->belongsToMany('App\Product')->withPivot('price');
     }
 }
