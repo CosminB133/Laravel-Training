@@ -8,8 +8,8 @@ class Product extends Model
 {
     public $timestamps = false;
 
-    public function order()
+    public function reviews()
     {
-        return $this->belongsTo('App\Order');
+         return $this->hasMany('App\Review');
     }
 }

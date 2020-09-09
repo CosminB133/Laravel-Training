@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Validator;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Element;
-use PhpParser\Node\Expr\PostDec;
 
 class ProductsController extends Controller
 {
@@ -18,9 +17,17 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('products.create');
+        return view('products.create', session('data', []));
     }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+        if (!$product) {
+            return redirect('/')->withErrors(['invalidId' => 'Invalid id!']);
+        }
+        return view('products.show', ['product' => $product, '']);
+    }
 
     public function store(Request $request)
     {
@@ -35,13 +42,13 @@ class ProductsController extends Controller
         );
 
         $product = new Product();
-        $product['title'] = $validatedData['title'];
-        $product['description'] = $validatedData['description'];
-        $product['price'] = $validatedData['price'];
+        $product->title = $validatedData['title'];
+        $product->description = $validatedData['description'];
+        $product->price = $validatedData['price'];
         $product->save();
 
         $path = public_path() . '/img/';
-        $validatedData['img']->move($path, $product->id);
+        $request->img->move($path, $product->id);
 
         return redirect('/products');
     }
@@ -51,7 +58,7 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            return redirect('products');
+            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
         }
         return view('products.edit', ['product' => $product]);
     }
@@ -70,14 +77,17 @@ class ProductsController extends Controller
         );
 
         $product = Product::find($id);
-        if ($product) {
-            $product['title'] = $validatedData['title'];
-            $product['description'] = $validatedData['description'];
-            $product['price'] = $validatedData['price'];
-            $product->save();
-
-            $validatedData['img']->move(public_path() . '/img/', $product->id);
+        if (!$product) {
+            $request->flash();
+            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
         }
+
+        $product->title = $validatedData['title'];
+        $product->description = $validatedData['description'];
+        $product->price = $validatedData['price'];
+        $product->save();
+
+        $request->img->move(public_path() . '/img/', $product->id);
 
         return redirect('/products');
     }
@@ -85,6 +95,9 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        if (!$product) {
+            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
+        }
         $product->delete();
         return redirect('/products');
     }
