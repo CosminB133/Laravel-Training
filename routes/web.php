@@ -19,9 +19,24 @@ Route::get('/cart', 'CartController@index');
 Route::post('/cart', 'CartController@addToCart');
 Route::delete('/cart', 'CartController@removeFromCart');
 
-Route::resource('/products', 'ProductsController')->except(['show'])->middleware('logged');
-
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
+Route::post('/logout', 'LoginController@logout')->middleware('logged');
 
-Route::resource('/orders', 'OrdersController')->only(['index', 'show', 'store']);
+Route::post('/reviews', 'ReviewsController@store');
+Route::delete('/reviews/{id}', 'ReviewsController@destroy')->middleware('logged');
+
+Route::middleware('logged')->group(
+    function () {
+        Route::get('products', 'ProductsController@index');
+        Route::get('products/create','ProductsController@create');
+        Route::get('products/{id}/edit', 'ProductsController@edit');
+        Route::get('products/{id}', 'ProductsController@show')->withoutMiddleware('logged');
+        Route::post('products','ProductsController@store');
+        Route::patch('products/{id}', 'ProductsController@update');
+        Route::delete('products/{id}', 'ProductsController@destroy');
+
+        Route::resource('/orders', 'OrdersController');
+    }
+);
+
