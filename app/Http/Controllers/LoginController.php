@@ -29,4 +29,12 @@ class LoginController extends Controller
         }
         return redirect('/login')->withErrors(['failed_login' => 'Wrong username or password!']);
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->put('auth', false);
+        return redirect('/login');
+    }
+
+
 }
