@@ -41,9 +41,9 @@ class OrdersController extends Controller
             }
         );
         $order = new Order();
-        $order->name = $request->name;
-        $order->comments = $request['comments'];
-        $order->contact = $request['contact'];
+        $order->name = $validatedData['name'];
+        $order->comments = $validatedData['comments'];
+        $order->contact = $validatedData['contact'];
         $order->price = $orderPrice;
         $order->save();
 
