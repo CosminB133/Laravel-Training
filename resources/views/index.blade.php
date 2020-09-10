@@ -4,7 +4,7 @@
     @foreach ($products as $product)
         <div class="row" style="margin: 10px">
             <div class="col-md-3">
-                <img src="{{ asset('img/' . $product->id) }}" alt="{{ trans('product image') }}" class="img-fluid"
+                <img src="{{ asset('img/' . $product->id) }}" alt="@lang('product image')" class="img-fluid"
                      style="max-height: 150px; margin-right: 5px">
 
             </div>
@@ -14,11 +14,12 @@
                 <p>{{ $product->price }}</p>
             </div>
             <div class="col-md-3">
-                <form action="/cart" method="post">
+                <form action="{{ route('cart') }}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
-                    <input type="submit" value="{{ trans('Add') }}" class="btn btn-success">
-                    <a href="products/{{ $product->id }}" class="btn btn-primary">{{ trans('Show') }}</a>
+                    <input type="submit" value="@lang('Add')" class="btn btn-success">
+                    <a href="{{ route('products.show', ['id' => $product->id]) }}"
+                       class="btn btn-primary">@lang('Show')</a>
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@
     @foreach($products as $product)
         <div class="row" style="margin: 10px">
             <div class="col-md-3">
-                <img src="{{ asset('img/' . $product->id) }}" alt="{{ trans('product image') }}" class="img-fluid"
+                <img src="{{ asset('img/' . $product->id) }}" alt="@lang('product image')" class="img-fluid"
                      style="max-height: 150px; margin-right: 5px">
             </div>
             <div class="col-md-6">
@@ -13,14 +13,14 @@
                 <p>{{ $product->price }}</p>
             </div>
             <div class="col-md-3">
-                <a href="{{ url('products/' . $product->id . '/edit') }}" class="btn btn-success">{{ trans('Edit') }}</a>
-                <form action=" {{ url('products/' . $product->id )}} " method="post">
+                <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-success">@lang('Edit')</a>
+                <form action=" {{ route('products.destroy', ['id' => $product->id]) }} " method="post">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="{{ trans('Delete') }}" class="btn btn-danger">
+                    <input type="submit" value="@lang('Delete')" class="btn btn-danger">
                 </form>
             </div>
         </div>
     @endforeach
-    <a href=" {{ url('/products/create') }}" class="btn btn-primary">{{ trans('New') }}</a>
+    <a href=" {{ url('/products/create') }}" class="btn btn-primary">@lang('New')</a>
 @endsection

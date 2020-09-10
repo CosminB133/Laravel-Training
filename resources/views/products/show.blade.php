@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" style="margin: 10px">
         <div class="col-md-3">
-            <img src="{{ asset('img/' . $product->id) }}" alt="{{ trans('product image') }}" class="img-fluid"
+            <img src="{{ asset('img/' . $product->id) }}" alt="@lang('product image')" class="img-fluid"
                  style="max-height: 150px; margin-right: 5px">
         </div>
         <div class="col-md-9">
@@ -26,11 +26,11 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="comments">{{ trans('Comments') }}</label>
+            <label for="comments">@lang('Comments')</label>
             <textarea name="comments" id="comments" cols="30" rows="10" class="form-control"></textarea>
         </div>
         <input type="hidden" value="{{ $product->id }}" name="product_id">
-        <input type="submit" class="btn btn-success">
+        <input type="submit" class="btn btn-success" value="@lang('Submit')">
     </form>
 
     @foreach ($product->reviews as $review)

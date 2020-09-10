@@ -13,30 +13,30 @@
                 <p>{{ $product->price }}</p>
             </div>
             <div class="col-md-3">
-                <form action="/cart" method="post">
+                <form action="{{ route('cart') }}" method="post">
                     @csrf
+                    @method('DELETE')
                     <input type="hidden" name="id" value="{{ $product->id }}">
-                    <input type="hidden" name="_method" value="delete">
-                    <input type="submit" value="{{ trans('Remove') }}" class="btn btn-danger">
+                    <input type="submit" value="@lang('Remove')" class="btn btn-danger">
                 </form>
             </div>
         </div>
     @endforeach
 
-    <form action="/orders" method="post">
+    <form action="{{ route('orders') }}" method="post">
         @csrf
         <div class="form-group">
-            <label for="name">{{ trans('Name :') }}</label>
+            <label for="name">@lang('Name :')</label>
             <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div class="form-group">
-            <label for="contact">{{ trans('Contact details :') }}</label>
+            <label for="contact">@lang('Contact details :')</label>
             <input type="text" class="form-control" name="contact" id="contact" value="{{ old('contact') }}">
         </div>
         <div class="form-group">
-            <label for="comments">{{ trans('Comments :') }}</label>
+            <label for="comments">@lang('Comments :')</label>
             <input type="text" class="form-control" name="comments" id="comments" value="{{ old('comments') }}">
         </div>
-        <input type="submit" class="btn btn-success" value="{{ trans('Submit') }}">
+        <input type="submit" class="btn btn-success" value="@lang('Submit')">
     </form>
 @endsection
