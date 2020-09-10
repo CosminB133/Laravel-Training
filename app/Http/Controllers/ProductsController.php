@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Product;
 use Validator;
 use Illuminate\Http\Request;
@@ -20,31 +21,18 @@ class ProductsController extends Controller
         return view('products.create', session('data', []));
     }
 
-    public function show($id)
+    public function show(Product $product)
     {
-        $product = Product::find($id);
-        if (!$product) {
-            return redirect()->route('index')->withErrors(['invalidId' => 'Invalid id!']);
-        }
-        return view('products.show', ['product' => $product]);
+        $reviews = $product->reviews;
+        return view('products.show', ['product' => $product, 'reviews' => $reviews]);
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $validatedData = $this->validate(
-            $request,
-            [
-                'title' => 'required',
-                'description' => 'required',
-                'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-                'img' => 'required|mimes:jpg,jpeg,png,gif',
-            ]
-        );
-
         $product = new Product();
-        $product->title = $validatedData['title'];
-        $product->description = $validatedData['description'];
-        $product->price = $validatedData['price'];
+        $product->title = $request->input('title');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
         $product->save();
 
         $path = public_path() . '/img/';
@@ -54,37 +42,17 @@ class ProductsController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $product = Product::find($id);
-        if (!$product) {
-            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
-        }
         return view('products.edit', ['product' => $product]);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, Product $product)
     {
-        $validatedData = $this->validate(
-            $request,
-            [
-                'title' => 'required',
-                'description' => 'required',
-                'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-                'img' => 'required|mimes:jpg,jpeg,png,gif',
-            ]
-        );
-
-        $product = Product::find($id);
-        if (!$product) {
-            $request->flash();
-            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
-        }
-
-        $product->title = $validatedData['title'];
-        $product->description = $validatedData['description'];
-        $product->price = $validatedData['price'];
+        $product->title = $request->input('title');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
         $product->save();
 
         $request->img->move(public_path() . '/img/', $product->id);
@@ -92,12 +60,8 @@ class ProductsController extends Controller
         return redirect()->route('products');
     }
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        $product = Product::find($id);
-        if (!$product) {
-            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
-        }
         $product->delete();
         return redirect()->route('products');
     }

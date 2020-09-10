@@ -33,7 +33,7 @@
         <input type="submit" class="btn btn-success" value="@lang('Submit')">
     </form>
 
-    @foreach ($product->reviews as $review)
+    @foreach ($reviews as $review)
         <div class="card">
             <div class="card-body">
                 <h3>{{ $review->rating }}</h3>

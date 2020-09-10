@@ -9,8 +9,7 @@ class ReviewsController extends Controller
 {
     public function store(Request $request)
     {
-        $validatedData = $this->validate(
-            $request,
+        $validatedData = $request->validate(
             [
                 'product_id' => 'required|exists:products,id',
                 'rating' => 'required',
@@ -25,14 +24,9 @@ class ReviewsController extends Controller
         return redirect()->route('products.show', ['id' => $validatedData['id']]);
     }
 
-    public function destroy($id)
+    public function destroy(Review $review)
     {
-        $review = Review::find($id);
-        if (!$review) {
-            return redirect()->route('index')->withErrors(['invalidId'=>'Invalid id!']);
-        }
-
         $review->delete();
-        return redirect()->route('products.edit', ['id' => $review->product_id]);
+        return redirect()->route('products.edit', ['product' => $review->product_id]);
     }
 }

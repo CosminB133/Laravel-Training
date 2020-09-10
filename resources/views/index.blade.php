@@ -18,7 +18,7 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
                     <input type="submit" value="@lang('Add')" class="btn btn-success">
-                    <a href="{{ route('products.show', ['id' => $product->id]) }}"
+                    <a href="{{ route('products.show', ['product' => $product->id]) }}"
                        class="btn btn-primary">@lang('Show')</a>
                 </form>
             </div>

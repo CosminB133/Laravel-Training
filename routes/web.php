@@ -24,17 +24,17 @@ Route::post('/login', 'LoginController@login');
 Route::post('/logout', 'LoginController@logout')->name('logout')->middleware('logged');
 
 Route::post('/reviews', 'ReviewsController@store')->name('reviews.store');
-Route::delete('/reviews/{id}', 'ReviewsController@destroy')->name('reviews.destroy')->middleware('logged');
+Route::delete('/reviews/{review}', 'ReviewsController@destroy')->name('reviews.destroy')->middleware('logged');
 
 Route::middleware('logged')->group(
     function () {
         Route::get('/products', 'ProductsController@index')->name('products');
         Route::get('/products/create', 'ProductsController@create')->name('products.create');
-        Route::get('/products/{id}/edit', 'ProductsController@edit')->name('products.edit');
-        Route::get('/products/{id}', 'ProductsController@show')->name('products.show')->withoutMiddleware('logged');
+        Route::get('/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
+        Route::get('/products/{product}', 'ProductsController@show')->name('products.show')->withoutMiddleware('logged');
         Route::post('/products', 'ProductsController@store')->name('products.store');
-        Route::patch('/products/{id}', 'ProductsController@update')->name('products.update');
-        Route::delete('/products/{id}', 'ProductsController@destroy')->name('products.destroy');
+        Route::patch('/products/{product}', 'ProductsController@update')->name('products.update');
+        Route::delete('/products/{product}', 'ProductsController@destroy')->name('products.destroy');
 
         Route::resource('/orders', 'OrdersController')->only(['index', 'store', 'show'])->names(
             [

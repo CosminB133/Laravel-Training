@@ -19,8 +19,7 @@ class OrdersController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $this->validate(
-            $request,
+        $validatedData = $request->validate(
             [
                 'name' => 'required',
                 'comments' => 'required',
@@ -61,9 +60,8 @@ class OrdersController extends Controller
         return redirect()->route('index');
     }
 
-    public function show($id)
+    public function show(Order $order)
     {
-        $order = Order::find($id);
         return view('orders.show', ['order' => $order]);
     }
 }

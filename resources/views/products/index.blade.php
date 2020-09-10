@@ -13,8 +13,8 @@
                 <p>{{ $product->price }}</p>
             </div>
             <div class="col-md-3">
-                <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-success">@lang('Edit')</a>
-                <form action=" {{ route('products.destroy', ['id' => $product->id]) }} " method="post">
+                <a href="{{ route('products.edit', ['product' => $product->id]) }}" class="btn btn-success">@lang('Edit')</a>
+                <form action=" {{ route('products.destroy', ['product' => $product->id]) }} " method="post">
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="@lang('Delete')" class="btn btn-danger">

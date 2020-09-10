@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>{{ trans('Edit Product') }} </h1>
-    <form action="{{ route('products.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('products.update', ['product' => $product->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group">
