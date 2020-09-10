@@ -24,9 +24,9 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            return redirect('/')->withErrors(['invalidId' => 'Invalid id!']);
+            return redirect()->route('index')->withErrors(['invalidId' => 'Invalid id!']);
         }
-        return view('products.show', ['product' => $product, '']);
+        return view('products.show', ['product' => $product]);
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class ProductsController extends Controller
         $path = public_path() . '/img/';
         $request->img->move($path, $product->id);
 
-        return redirect('/products');
+        return redirect()->route('products');
     }
 
 
@@ -58,7 +58,7 @@ class ProductsController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
+            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
         }
         return view('products.edit', ['product' => $product]);
     }
@@ -79,7 +79,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         if (!$product) {
             $request->flash();
-            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
+            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
         }
 
         $product->title = $validatedData['title'];
@@ -89,16 +89,16 @@ class ProductsController extends Controller
 
         $request->img->move(public_path() . '/img/', $product->id);
 
-        return redirect('/products');
+        return redirect()->route('products');
     }
 
     public function destroy($id)
     {
         $product = Product::find($id);
         if (!$product) {
-            return redirect('/products')->withErrors(['invalidId' => 'Invalid id!']);
+            return redirect()->route('products')->withErrors(['invalidId' => 'Invalid id!']);
         }
         $product->delete();
-        return redirect('/products');
+        return redirect()->route('products');
     }
 }

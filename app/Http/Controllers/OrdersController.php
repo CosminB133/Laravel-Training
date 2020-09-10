@@ -30,7 +30,7 @@ class OrdersController extends Controller
 
         if (!$request->session()->get('cart')) {
             $request->flash();
-            return redirect('/cart')->withErrors(['empty_cart' => 'Cart is empty!']);
+            return redirect()->route('cart')->withErrors(['empty_cart' => 'Cart is empty!']);
         }
 
         $products = array_map('App\Product::find', $request->session()->get('cart'));
@@ -58,7 +58,7 @@ class OrdersController extends Controller
                 $message->to(config('services.admin.email'))->subject('Order');
             }
         );
-        return redirect('/cart');
+        return redirect()->route('index');
     }
 
     public function show($id)

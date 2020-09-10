@@ -25,15 +25,15 @@ class LoginController extends Controller
             && config('services.admin.pass') == $validatedData['password']
         ) {
             $request->session()->put('auth', true);
-            return redirect('/products');
+            return redirect()->route('products');
         }
-        return redirect('/login')->withErrors(['failed_login' => 'Wrong username or password!']);
+        return redirect()->route('login')->withErrors(['failed_login' => 'Wrong username or password!']);
     }
 
     public function logout(Request $request)
     {
         $request->session()->put('auth', false);
-        return redirect('/login');
+        return redirect()->route('login');
     }
 
 

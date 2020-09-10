@@ -22,17 +22,17 @@ class ReviewsController extends Controller
         $review->rating = $validatedData['rating'];
         $review->product_id = $validatedData['product_id'];
         $review->save();
-        return redirect('/products/' . $validatedData['product_id']);
+        return redirect()->route('products.show', ['id' => $validatedData['id']]);
     }
 
     public function destroy($id)
     {
         $review = Review::find($id);
         if (!$review) {
-            return redirect('/')->withErrors(['invalidId'=>'Invalid id!']);
+            return redirect()->route('index')->withErrors(['invalidId'=>'Invalid id!']);
         }
-        $productId = $review->product_id;
+
         $review->delete();
-        return redirect('/products/' . $productId . '/edit');
+        return redirect()->route('products.edit', ['id' => $review->product_id]);
     }
 }

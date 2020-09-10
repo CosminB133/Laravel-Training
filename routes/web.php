@@ -13,30 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('index');
 
-Route::get('/cart', 'CartController@index');
+Route::get('/cart', 'CartController@index')->name('cart');
 Route::post('/cart', 'CartController@addToCart');
 Route::delete('/cart', 'CartController@removeFromCart');
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@login');
-Route::post('/logout', 'LoginController@logout')->middleware('logged');
+Route::post('/logout', 'LoginController@logout')->name('logout')->middleware('logged');
 
-Route::post('/reviews', 'ReviewsController@store');
-Route::delete('/reviews/{id}', 'ReviewsController@destroy')->middleware('logged');
+Route::post('/reviews', 'ReviewsController@store')->name('reviews.store');
+Route::delete('/reviews/{id}', 'ReviewsController@destroy')->name('reviews.destroy')->middleware('logged');
 
 Route::middleware('logged')->group(
     function () {
-        Route::get('products', 'ProductsController@index');
-        Route::get('products/create','ProductsController@create');
-        Route::get('products/{id}/edit', 'ProductsController@edit');
-        Route::get('products/{id}', 'ProductsController@show')->withoutMiddleware('logged');
-        Route::post('products','ProductsController@store');
-        Route::patch('products/{id}', 'ProductsController@update');
-        Route::delete('products/{id}', 'ProductsController@destroy');
+        Route::get('/products', 'ProductsController@index')->name('products');
+        Route::get('/products/create', 'ProductsController@create')->name('products.create');
+        Route::get('/products/{id}/edit', 'ProductsController@edit')->name('products.edit');
+        Route::get('/products/{id}', 'ProductsController@show')->name('products.show')->withoutMiddleware('logged');
+        Route::post('/products', 'ProductsController@store')->name('products.store');
+        Route::patch('/products/{id}', 'ProductsController@update')->name('products.update');
+        Route::delete('/products/{id}', 'ProductsController@destroy')->name('products.destroy');
 
-        Route::resource('/orders', 'OrdersController');
+        Route::resource('/orders', 'OrdersController')->only(['index', 'store', 'show'])->names(
+            [
+                'index' => 'orders',
+                'store' => 'orders.store',
+                'show' => 'orders.show',
+            ]
+        );
     }
 );
 

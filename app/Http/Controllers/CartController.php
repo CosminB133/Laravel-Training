@@ -29,7 +29,7 @@ class CartController extends Controller
         } else {
             $request->session()->put('cart', [$request->id]);
         }
-        return redirect('/');
+        return redirect()->route('index');
     }
 
     public function removeFromCart(Request $request)
@@ -51,6 +51,6 @@ class CartController extends Controller
             $request->session()->put('cart', $cart);
         }
 
-        return redirect('/cart');
+        return redirect()->route('cart');
     }
 }
