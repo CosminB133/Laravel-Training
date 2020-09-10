@@ -2,29 +2,29 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">{{ trans('Home') }}</a>
+                <a class="nav-link" href="{{ route('index') }}">@lang('Home')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/cart') }}">{{ trans('Cart') }}</a>
+                <a class="nav-link" href="{{ route('cart') }}">@lang('Cart')</a>
             </li>
             @if (session('auth'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/products') }}">{{ trans('Products') }}</a>
+                    <a class="nav-link" href="{{ route('products') }}">@lang('Products')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/orders') }}">{{ trans('Orders') }}</a>
+                    <a class="nav-link" href="{{ route('orders') }}">@lang('Orders')</a>
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/login') }}">{{ trans('Login') }}</a>
+                    <a class="nav-link" href="{{ route('login') }}">@lang('Login')</a>
                 </li>
             @endif
         </ul>
 
         @if (session('auth'))
-            <form action="{{ url('/logout') }}" method="post" class="form-inline my-2 my-lg-0">
+            <form action="{{ route('logout') }}" method="post" class="form-inline my-2 my-lg-0">
                 @csrf
-                <input type="submit" value="{{ trans('Logout') }}" class="btn btn-danger">
+                <input type="submit" value="@lang('Logout')" class="btn btn-danger">
             </form>
         @endif
     </div>
