@@ -4,7 +4,7 @@
     @foreach ($products as $product)
         <div class="row" style="margin: 10px">
             <div class="col-md-3">
-                <img src="{{ asset('img/' . $product->id) }}" alt="{{ trans('product image') }}" class="img-fluid"
+                <img src="{{ asset('img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
                      style="max-height: 150px; margin-right: 5px">
             </div>
             <div class="col-md-6">
@@ -17,7 +17,7 @@
                     @csrf
                     @method('DELETE')
                     <input type="hidden" name="id" value="{{ $product->id }}">
-                    <input type="submit" value="@lang('Remove')" class="btn btn-danger">
+                    <input type="submit" value="{{ __('Remove') }}" class="btn btn-danger">
                 </form>
             </div>
         </div>
@@ -26,17 +26,17 @@
     <form action="{{ route('orders') }}" method="post">
         @csrf
         <div class="form-group">
-            <label for="name">@lang('Name :')</label>
+            <label for="name">{{ __('Name :') }}</label>
             <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div class="form-group">
-            <label for="contact">@lang('Contact details :')</label>
+            <label for="contact">{{ __('Contact details :') }}</label>
             <input type="text" class="form-control" name="contact" id="contact" value="{{ old('contact') }}">
         </div>
         <div class="form-group">
-            <label for="comments">@lang('Comments :')</label>
+            <label for="comments">{{ __('Comments :') }}</label>
             <input type="text" class="form-control" name="comments" id="comments" value="{{ old('comments') }}">
         </div>
-        <input type="submit" class="btn btn-success" value="@lang('Submit')">
+        <input type="submit" class="btn btn-success" value="{{ __('Submit') }}">
     </form>
 @endsection

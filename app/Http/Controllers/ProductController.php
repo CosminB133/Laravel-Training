@@ -7,7 +7,7 @@ use App\Product;
 use Validator;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
 
     public function index()

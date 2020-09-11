@@ -19,8 +19,9 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
+@include('inc.nav')
+
 <div class="container">
-    @include('inc.nav')
     @include('inc.messages')
     @yield('content')
 </div>

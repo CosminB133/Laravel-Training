@@ -1,28 +1,28 @@
 @extends('layout')
 
 @section('content')
-    <h1>{{ trans('Edit Product') }} </h1>
+    <h1>{{ __('Edit Product') }} </h1>
     <form action="{{ route('products.update', ['product' => $product->id]) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <div class="form-group">
-            <label for="title">@lang('Title')</label>
+            <label for="title">{{ __('Title') }}</label>
             <input type="text" name="title" id="title" class="form-control" value="{{ $product['title'] }}">
         </div>
         <div class="form-group">
-            <label for="description">@lang('Description')</label>
+            <label for="description">{{ __('Description') }}</label>
             <textarea name="description" id="description" cols="30" rows="10"
                       class="form-control">{{ $product['description'] }}</textarea>
         </div>
         <div class="form-group">
-            <label for="price">@lang('Price')</label>
+            <label for="price">{{ __('Price') }}</label>
             <input type="text" name="price" id="price" class="form-control" value="{{ $product['price'] }}">
         </div>
         <div class="form-group">
-            <label for="img">@lang('Image')</label>
+            <label for="img">{{ __('Image') }}</label>
             <input type="file" name="img" id="img" class="form-control-file">
         </div>
-        <input type="submit" class="btn btn-primary" value="@lang('Submit')">
+        <input type="submit" class="btn btn-primary" value="{{ __('Submit') }}">
     </form>
 
     @foreach ($product->reviews as $review)
@@ -31,10 +31,10 @@
                 <h3>{{ $review->rating }}</h3>
                 <p>{{ $review->comment }}</p>
 
-                <form action="{{ route('reviews.destroy', ['id' => $review->id]) }}" method="post">
+                <form action="{{ route('reviews.destroy', ['review' => $review->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="@lang('Delete')" class="btn btn-danger">
+                    <input type="submit" value="{{ __('Delete') }}" class="btn btn-danger">
                 </form>
             </div>
         </div>

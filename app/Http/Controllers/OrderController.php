@@ -8,7 +8,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-class OrdersController extends Controller
+class OrderController extends Controller
 {
 
     public function index()

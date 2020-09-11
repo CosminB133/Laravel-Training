@@ -21,7 +21,7 @@ class ReviewsController extends Controller
         $review->rating = $validatedData['rating'];
         $review->product_id = $validatedData['product_id'];
         $review->save();
-        return redirect()->route('products.show', ['id' => $validatedData['id']]);
+        return redirect()->route('products.show', ['product' => $validatedData['product_id']]);
     }
 
     public function destroy(Review $review)
