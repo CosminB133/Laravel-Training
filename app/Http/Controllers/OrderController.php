@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderEmail;
 use App\Order;
 use Validator;
 use App\Product;
@@ -49,19 +50,14 @@ class OrderController extends Controller
         foreach ($products as $product) {
             $order->products()->attach([$product->id => ['price' => $product->price]]);
         }
+        Mail::to(config('services.admin.email'))->send(new OrderEmail($order, $products));
 
-        Mail::send(
-            'orders.show',
-            ['order' => $order],
-            function ($message) {
-                $message->to(config('services.admin.email'))->subject('Order');
-            }
-        );
         return redirect()->route('index');
     }
 
     public function show(Order $order)
     {
-        return view('orders.show', ['order' => $order]);
+        $products = $order->products;
+        return view('orders.show', ['order' => $order, 'products' => $products]);
     }
 }
