@@ -36,7 +36,7 @@ class ProductController extends Controller
         $product->save();
 
         $path = public_path() . '/img/';
-        $request->img->move($path, $product->id);
+        $request->file('img')->move($path, $product->id);
 
         return redirect()->route('products');
     }

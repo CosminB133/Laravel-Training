@@ -11,7 +11,7 @@
             <p> {{ __('Last update') }} {{ $order->updated_at->diffForHumans() }}</p>
         </div>
     </div>
-    @foreach($order->products as $product)
+    @foreach($products as $product)
         <div class="row" style="margin: 10px">
             <div class="col-md-3">
                 <img src="{{ asset('img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
