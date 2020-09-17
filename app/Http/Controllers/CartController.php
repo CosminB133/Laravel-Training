@@ -40,15 +40,17 @@ class CartController extends Controller
             ]
         );
 
-        if ($request->session()->has('cart')) {
-            $cart = $request->session()->get('cart');
-            array_splice(
-                $cart,
-                array_search($request->input('id'), $cart),
-                1
-            );
-            $request->session()->put('cart', $cart);
+        if (!$request->session()->has('cart')) {
+            return redirect()->route('cart')->withErrors(['cart' => 'Cart already empty']);
         }
+
+        $cart = $request->session()->get('cart');
+        array_splice(
+            $cart,
+            array_search($request->input('id'), $cart),
+            1
+        );
+        $request->session()->put('cart', $cart);
 
         return redirect()->route('cart');
     }

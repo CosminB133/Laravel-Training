@@ -30,7 +30,7 @@ class OrderController extends Controller
 
         if (!$request->session()->get('cart')) {
             $request->flash();
-            return redirect()->route('cart')->withErrors(['empty_cart' => 'Cart is empty!']);
+            return redirect()->route('cart')->withErrors(['cart' => 'Cart is empty!']);
         }
 
         $products = array_map('App\Product::find', $request->session()->get('cart'));
