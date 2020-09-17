@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Mail\OrderEmail;
 use App\Order;
 use Validator;
-use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,12 +14,13 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+
         return view('orders.index', ['orders' => $orders]);
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate(
+        $request->validate(
             [
                 'name' => 'required',
                 'comments' => 'required',
@@ -34,6 +34,7 @@ class OrderController extends Controller
         }
 
         $products = array_map('App\Product::find', $request->session()->get('cart'));
+
         $orderPrice = array_reduce(
             $products,
             function ($sum, $product) {
@@ -41,9 +42,9 @@ class OrderController extends Controller
             }
         );
         $order = new Order();
-        $order->name = $validatedData['name'];
-        $order->comments = $validatedData['comments'];
-        $order->contact = $validatedData['contact'];
+        $order->name = $request->input('name');
+        $order->comments = $request->input('comments');
+        $order->contact = $request->input('contact');
         $order->price = $orderPrice;
         $order->save();
 
@@ -57,7 +58,6 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
-        $products = $order->products;
-        return view('orders.show', ['order' => $order, 'products' => $products]);
+        return view('orders.show', ['order' => $order, 'products' => $order->products]);
     }
 }

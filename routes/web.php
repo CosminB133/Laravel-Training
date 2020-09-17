@@ -19,8 +19,8 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::post('/cart', 'CartController@addToCart');
-Route::delete('/cart', 'CartController@removeFromCart');
+Route::post('/cart', 'CartController@store');
+Route::delete('/cart', 'CartController@destroy');
 
 Route::post('/reviews', 'ReviewsController@store')->name('reviews.store');
 Route::delete('/reviews/{review}', 'ReviewsController@destroy')->name('reviews.destroy')->middleware('auth');

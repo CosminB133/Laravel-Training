@@ -12,13 +12,12 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::all();
-        return view('products.index', ['products' => $products]);
+        return view('products.index', ['products' => Product::all()]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('products.create', session('data', []));
+        return view('products.create', $request->session()->get('data', []));
     }
 
     public function show(Product $product)
@@ -35,8 +34,7 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->save();
 
-        $path = public_path() . '/img/';
-        $request->file('img')->move($path, $product->id);
+        $request->file('img')->storeAs('/img', $product->id);
 
         return redirect()->route('products');
     }
@@ -55,7 +53,7 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->save();
 
-        $request->img->move(public_path() . '/img/', $product->id);
+        $request->file('img')->storeAs('/public/img', $product->id);
 
         return redirect()->route('products');
     }
@@ -63,6 +61,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+
         return redirect()->route('products');
     }
 }
