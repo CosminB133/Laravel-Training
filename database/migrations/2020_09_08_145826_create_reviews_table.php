@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('comment');
             $table->smallInteger('rating');
-            $table->integer('product_id');
+            $table->integer('product_id')->unsigned()->index();
         });
     }
 
