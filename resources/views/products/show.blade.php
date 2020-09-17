@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" style="margin: 10px">
         <div class="col-md-3">
-            <img src="{{ asset('img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
+            <img src="{{  Storage::url( 'img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
                  style="max-height: 150px; margin-right: 5px">
         </div>
         <div class="col-md-9">
