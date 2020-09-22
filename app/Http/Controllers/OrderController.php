@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Mail;
 class OrderController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth')->except('store');
+    }
+
     public function index()
     {
         $orders = Order::all();
@@ -20,8 +25,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate(
-            [
+        $request->validate([
                 'name' => 'required',
                 'comments' => 'required',
                 'contact' => 'required',
@@ -41,11 +45,17 @@ class OrderController extends Controller
                 return $sum + $product->price;
             }
         );
+
         $order = new Order();
-        $order->name = $request->input('name');
-        $order->comments = $request->input('comments');
-        $order->contact = $request->input('contact');
-        $order->price = $orderPrice;
+
+        $order->fill([
+                'name' => $request->input('name'),
+                'comments' => $request->input('comments'),
+                'contact' => $request->input('contact'),
+                'price' => $orderPrice,
+            ]
+        );
+
         $order->save();
 
         foreach ($products as $product) {

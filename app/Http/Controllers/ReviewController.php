@@ -5,21 +5,31 @@ namespace App\Http\Controllers;
 use App\Review;
 use Illuminate\Http\Request;
 
-class ReviewsController extends Controller
+class ReviewController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only('destroy');
+    }
+
     public function store(Request $request)
     {
-        $request->validate(
-            [
+        $request->validate([
                 'product_id' => 'required|exists:products,id',
                 'rating' => 'required',
                 'comments' => 'required',
             ]
         );
+
         $review = new Review();
-        $review->comment = $request->input('comments');
-        $review->rating = $request->input('rating');
-        $review->product_id = $request->input('product_id');
+
+        $review->fill([
+                'comment' => $request->input('comments'),
+                'rating' => $request->input('rating'),
+            ]
+        );
+        $review->product()->associate($request->input('product_id'));
+
         $review->save();
 
         return redirect()->route('products.show', ['product' => $request->input('product_id')]);
