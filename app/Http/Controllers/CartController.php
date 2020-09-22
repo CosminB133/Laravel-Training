@@ -35,7 +35,7 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
                 'id' => 'required|exists:products,id'
             ]
         );
