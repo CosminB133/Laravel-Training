@@ -28,9 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style" />
     <list id="1ee19611-ca54-4aad-9d69-bdbb0dae5e01" name="#13 Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Check if already in cart" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +207,7 @@
       <workItem from="1600708138192" duration="68000" />
       <workItem from="1600764708936" duration="3496000" />
       <workItem from="1600770693153" duration="1639000" />
-      <workItem from="1600774032685" duration="12825000" />
+      <workItem from="1600774032685" duration="13180000" />
     </task>
     <task id="LOCAL-00001" summary="Initail Commit">
       <created>1599470629645</created>
@@ -484,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600786440696</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
+      <created>1600787010915</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1600787010915</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,12 +590,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2729" y="435" width="292" height="161" key="VCS.ChangelistChooser/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599565593063" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1600784349710">
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1600787035614">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="246" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600339897326" />
     <state x="320" y="246" key="Vcs.Push.Dialog.v2/0.0.3840.1040@0.0.3840.1040" timestamp="1599773359506" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600784349710" />
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600787035614" />
     <state x="570" y="132" width="770" height="767" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600337321536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
