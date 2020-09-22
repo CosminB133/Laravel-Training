@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use Illuminate\Support\Facades\Storage;
 use Validator;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
 
     public function index()
     {
@@ -22,21 +27,26 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        $reviews = $product->reviews;
-        return view('products.show', ['product' => $product, 'reviews' => $reviews]);
+        return view('products.show', ['product' => $product, 'reviews' => $product->reviews]);
     }
 
     public function store(ProductRequest $request)
     {
         $product = new Product();
-        $product->title = $request->input('title');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
+
+        $product->fill(
+            [
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'price' => $request->input('price'),
+            ]
+        );
+
         $product->save();
 
-        $request->file('img')->storeAs('/img', $product->id);
+        $request->file('img')->storeAs('/public/img', $product->id);
 
-        return redirect()->route('products');
+        return redirect()->route('products.index');
     }
 
 
@@ -48,20 +58,28 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
-        $product->title = $request->input('title');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
+        $product->fill([
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'price' => $request->input('price'),
+            ]
+        );
+
         $product->save();
 
         $request->file('img')->storeAs('/public/img', $product->id);
 
-        return redirect()->route('products');
+        return redirect()->route('products.index');
     }
 
-    public function destroy(Product $product)
+    public function destroy(Request $request, Product $product)
     {
         $product->delete();
 
-        return redirect()->route('products');
+        Storage::delete('public/img/' . $product->id);
+
+
+
+        return redirect()->route('products.index');
     }
 }
