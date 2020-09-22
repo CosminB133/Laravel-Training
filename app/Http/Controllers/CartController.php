@@ -16,7 +16,7 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
                 'id' => 'required|exists:products,id'
             ]
         );
@@ -41,7 +41,7 @@ class CartController extends Controller
         );
 
         if (!$request->session()->has('cart')) {
-            return redirect()->route('cart')->withErrors(['cart' => 'Cart already empty']);
+            return redirect()->route('cart.index')->withErrors(['cart' => 'Cart already empty']);
         }
 
         $cart = $request->session()->get('cart');
@@ -52,6 +52,6 @@ class CartController extends Controller
         );
         $request->session()->put('cart', $cart);
 
-        return redirect()->route('cart');
+        return redirect()->route('cart.index');
     }
 }

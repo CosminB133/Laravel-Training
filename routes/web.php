@@ -15,34 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
 Route::get('/', 'IndexController@index')->name('index');
 
-Route::get('/cart', 'CartController@index')->name('cart');
-Route::post('/cart', 'CartController@store');
-Route::delete('/cart', 'CartController@destroy');
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::delete('/cart', 'CartController@destroy')->name('cart.destroy');
 
-Route::post('/reviews', 'ReviewsController@store')->name('reviews.store');
-Route::delete('/reviews/{review}', 'ReviewsController@destroy')->name('reviews.destroy')->middleware('auth');
+Route::resource('/reviews', 'ReviewController')->only(['store', 'destroy']);
 
-Route::middleware('auth')->group(
-    function () {
-        Route::get('/products', 'ProductController@index')->name('products');
-        Route::get('/products/create', 'ProductController@create')->name('products.create');
-        Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
-        Route::get('/products/{product}', 'ProductController@show')->name('products.show')->withoutMiddleware('auth');
-        Route::post('/products', 'ProductController@store')->name('products.store');
-        Route::patch('/products/{product}', 'ProductController@update')->name('products.update');
-        Route::delete('/products/{product}', 'ProductController@destroy')->name('products.destroy');
+Route::resource('/products', 'ProductController');
 
-        Route::resource('/orders', 'OrderController')->only(['index', 'store', 'show'])->names(
-            [
-                'index' => 'orders',
-                'store' => 'orders.store',
-                'show' => 'orders.show',
-            ]
-        );
-    }
-);
-
-
+Route::resource('/orders', 'OrderController')->only(['index', 'show', 'store']);

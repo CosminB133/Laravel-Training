@@ -4,7 +4,7 @@
     @foreach ($products as $product)
         <div class="row" style="margin: 10px">
             <div class="col-md-3">
-                <img src="{{  Storage::url( 'img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
+                <img src="{{  Storage::url('img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
                      style="max-height: 150px; margin-right: 5px">
 
             </div>
@@ -14,7 +14,7 @@
                 <p>{{ $product->price }}</p>
             </div>
             <div class="col-md-3">
-                <form action="{{ route('cart') }}" method="post">
+                <form action="{{ route('cart.index') }}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
                     <input type="submit" value="{{ __('Add') }}" class="btn btn-success">

@@ -9,19 +9,39 @@
             <label for="title">{{ __('Title') }}</label>
             <input type="text" name="title" id="title" class="form-control" value="{{ $product['title'] }}">
         </div>
+
+        @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="form-group">
             <label for="description">{{ __('Description') }}</label>
             <textarea name="description" id="description" cols="30" rows="10"
                       class="form-control">{{ $product['description'] }}</textarea>
         </div>
+
+        @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="form-group">
             <label for="price">{{ __('Price') }}</label>
             <input type="text" name="price" id="price" class="form-control" value="{{ $product['price'] }}">
         </div>
+
+        @error('price')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="form-group">
             <label for="img">{{ __('Image') }}</label>
             <input type="file" name="img" id="img" class="form-control-file">
         </div>
+
+        @error('price')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <input type="submit" class="btn btn-primary" value="{{ __('Submit') }}">
     </form>
 

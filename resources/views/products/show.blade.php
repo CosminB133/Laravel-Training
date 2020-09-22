@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" style="margin: 10px">
         <div class="col-md-3">
-            <img src="{{  Storage::url( 'img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
+            <img src="{{  Storage::url('img/' . $product->id) }}" alt="{{ __('product image') }}" class="img-fluid"
                  style="max-height: 150px; margin-right: 5px">
         </div>
         <div class="col-md-9">
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <form action="/reviews" method="post">
+    <form action="{{ route('reviews.store') }}" method="post">
         @csrf
         <div class="form-group">
             <label for="rating">{{ __('Rating') }}</label>
@@ -25,10 +25,20 @@
                 <option value="5">{{ __('5') }}</option>
             </select>
         </div>
+
+        @error('rating')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="form-group">
-            <label for="comments">@lang('Comments')</label>
+            <label for="comments">{{ __('Comments') }}</label>
             <textarea name="comments" id="comments" cols="30" rows="10" class="form-control"></textarea>
         </div>
+
+        @error('comments')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <input type="hidden" value="{{ $product->id }}" name="product_id">
         <input type="submit" class="btn btn-success" value="{{ __('Submit') }}">
     </form>
