@@ -33,6 +33,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+
+        <img src="{{  Storage::url('img/' . $product->id) }}" class="img-fluid" alt="{{ __('product image') }}">
+
         <div class="form-group">
             <label for="img">{{ __('Image') }}</label>
             <input type="file" name="img" id="img" class="form-control-file">

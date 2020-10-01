@@ -34,13 +34,11 @@ class ProductController extends Controller
     {
         $product = new Product();
 
-        $product->fill(
-            [
+        $product->fill([
                 'title' => $request->input('title'),
                 'description' => $request->input('description'),
                 'price' => $request->input('price'),
-            ]
-        );
+        ]);
 
         $product->save();
 
@@ -56,18 +54,26 @@ class ProductController extends Controller
     }
 
 
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'img' => 'nullable|mimes:jpg,jpeg,png,gif',
+        ]);
+
         $product->fill([
                 'title' => $request->input('title'),
                 'description' => $request->input('description'),
                 'price' => $request->input('price'),
-            ]
-        );
+        ]);
 
         $product->save();
 
-        $request->file('img')->storeAs('/public/img', $product->id);
+        if ($request->file('img')) {
+            $request->file('img')->storeAs('/public/img', $product->id);
+        }
 
         return redirect()->route('products.index');
     }
@@ -77,8 +83,6 @@ class ProductController extends Controller
         $product->delete();
 
         Storage::delete('public/img/' . $product->id);
-
-
 
         return redirect()->route('products.index');
     }
