@@ -28,7 +28,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style" />
+    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+    </list>
     <list id="1ee19611-ca54-4aad-9d69-bdbb0dae5e01" name="#13 Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Check if already in cart" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +214,10 @@
       <workItem from="1600708138192" duration="68000" />
       <workItem from="1600764708936" duration="3496000" />
       <workItem from="1600770693153" duration="1639000" />
-      <workItem from="1600774032685" duration="13180000" />
+      <workItem from="1600774032685" duration="13298000" />
+      <workItem from="1600850470765" duration="681000" />
+      <workItem from="1601121166594" duration="1404000" />
+      <workItem from="1601549383164" duration="6824000" />
     </task>
     <task id="LOCAL-00001" summary="Initail Commit">
       <created>1599470629645</created>
@@ -489,7 +499,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600787010915</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
+      <created>1600787408793</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1600787408793</updated>
+    </task>
+    <task id="LOCAL-00042" summary="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
+      <created>1601556097522</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1601556097522</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,9 +581,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2535" y="0" width="670" height="1040" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599818281909" />
-    <state x="2613" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599578631035">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601551317166">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601551317166" />
     <state x="2613" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599578631035" />
     <state x="2625" y="366" width="500" height="299" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599825018414">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -573,11 +598,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600340376006" />
-    <state x="743" y="267" width="424" height="478" key="FileChooserDialogImpl" timestamp="1600341434857">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl" timestamp="1600852291344">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="743" y="267" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600341434857" />
-    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600161777831" />
+    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600852291344" />
     <state x="2297" y="424" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1600784213648">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -590,12 +615,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2729" y="435" width="292" height="161" key="VCS.ChangelistChooser/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599565593063" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1600787035614">
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1600787412314">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="555" y="246" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600339897326" />
     <state x="320" y="246" key="Vcs.Push.Dialog.v2/0.0.3840.1040@0.0.3840.1040" timestamp="1599773359506" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600787035614" />
+    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600787412314" />
     <state x="570" y="132" width="770" height="767" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600337321536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

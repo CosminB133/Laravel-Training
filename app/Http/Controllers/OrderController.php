@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderEmail;
 use App\Order;
-use Validator;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,22 +29,13 @@ class OrderController extends Controller
                 'name' => 'required',
                 'comments' => 'required',
                 'contact' => 'required',
-            ]
-        );
+        ]);
 
         if (!$request->session()->get('cart')) {
-            $request->flash();
-            return redirect()->route('cart')->withErrors(['cart' => 'Cart is empty!']);
+            return redirect()->route('cart.index')->withErrors(['cart' => 'Cart is empty!'])->withInput();
         }
 
-        $products = array_map('App\Product::find', $request->session()->get('cart'));
-
-        $orderPrice = array_reduce(
-            $products,
-            function ($sum, $product) {
-                return $sum + $product->price;
-            }
-        );
+        $products = Product::whereIn('id', $request->session()->get('cart'))->get();
 
         $order = new Order();
 
@@ -52,9 +43,8 @@ class OrderController extends Controller
                 'name' => $request->input('name'),
                 'comments' => $request->input('comments'),
                 'contact' => $request->input('contact'),
-                'price' => $orderPrice,
-            ]
-        );
+                'price' => $products->sum('price'),
+        ]);
 
         $order->save();
 
