@@ -18,16 +18,14 @@ class ReviewController extends Controller
                 'product_id' => 'required|exists:products,id',
                 'rating' => 'required',
                 'comments' => 'required',
-            ]
-        );
+        ]);
 
         $review = new Review();
 
         $review->fill([
                 'comment' => $request->input('comments'),
                 'rating' => $request->input('rating'),
-            ]
-        );
+        ]);
         $review->product()->associate($request->input('product_id'));
 
         $review->save();
