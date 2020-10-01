@@ -18,8 +18,7 @@ class CartController extends Controller
     {
         $request->validate([
                 'id' => 'required|exists:products,id'
-            ]
-        );
+        ]);
 
         if (
             $request->session()->has('cart')
@@ -37,11 +36,10 @@ class CartController extends Controller
     {
         $request->validate([
                 'id' => 'required|exists:products,id'
-            ]
-        );
+        ]);
 
         if (!$request->session()->has('cart')) {
-            return redirect()->route('cart.index')->withErrors(['cart' => 'Cart already empty']);
+            return redirect()->route('cart.index')->withErrors(['cart' => 'Cart already empty'])->withInput();
         }
 
         $cart = $request->session()->get('cart');
