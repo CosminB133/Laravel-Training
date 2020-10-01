@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        return view('products.create', $request->session()->get('data', []));
+        return view('products.create');
     }
 
     public function show(Product $product)

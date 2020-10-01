@@ -28,13 +28,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style">
+    <list default="true" id="beac3e59-d284-4719-aae2-0492c9781f46" name="Default Changelist" comment="#26: Order&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/26 Made the changes following the feedback.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
     </list>
     <list id="1ee19611-ca54-4aad-9d69-bdbb0dae5e01" name="#13 Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Check if already in cart" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +212,8 @@
       <workItem from="1600774032685" duration="13298000" />
       <workItem from="1600850470765" duration="681000" />
       <workItem from="1601121166594" duration="1404000" />
-      <workItem from="1601549383164" duration="6824000" />
+      <workItem from="1601549383164" duration="8489000" />
+      <workItem from="1601574589694" duration="3172000" />
     </task>
     <task id="LOCAL-00001" summary="Initail Commit">
       <created>1599470629645</created>
@@ -513,7 +509,28 @@
       <option name="project" value="LOCAL" />
       <updated>1601556097522</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="#29: Test http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/29 Code style">
+      <created>1601556439837</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1601556439837</updated>
+    </task>
+    <task id="LOCAL-00044" summary="#26: Order&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/26 Optional img field for editing product.">
+      <created>1601556531359</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1601556531359</updated>
+    </task>
+    <task id="LOCAL-00045" summary="#26: Order&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/26 Made the changes following the feedback.">
+      <created>1601556624327</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1601556624327</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,9 +561,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/13 Adjustments" />
-    <MESSAGE value="#15: Products http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/13 Added a show and repopulation for forms." />
-    <MESSAGE value="#15: Products http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/15 Added a show and repopulation for forms." />
     <MESSAGE value="#15: Orders http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/17 Added orders" />
     <MESSAGE value="#15: Orders http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/29 Added reviews" />
     <MESSAGE value="#13: Orders http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/13 Email" />
@@ -569,7 +583,10 @@
     <MESSAGE value="#15: Products #15 Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/15 Used fill" />
     <MESSAGE value="#17: Cart #17 Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/17 Code style" />
     <MESSAGE value="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style" />
-    <option name="LAST_COMMIT_MESSAGE" value="#13: Cart http://pm.5psolutions.net/public/index.php?path_info=projects/169/tasks/13 Code style" />
+    <MESSAGE value="#29: Test http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/29 Code style" />
+    <MESSAGE value="#16: Product&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/16 Optional img field for editing product." />
+    <MESSAGE value="#26: Order&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/26 Made the changes following the feedback." />
+    <option name="LAST_COMMIT_MESSAGE" value="#26: Order&#10;http://pm.5psolutions.net/public/index.php?path_info=projects/training-cosmin-barbascu/tasks/26 Made the changes following the feedback." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2642" y="324" width="472" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600781870246">
@@ -581,10 +598,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2535" y="0" width="670" height="1040" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599818281909" />
-    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601551317166">
+    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601575343709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601551317166" />
+    <state x="693" y="267" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601575343709" />
     <state x="2613" y="277" width="524" height="478" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599578631035" />
     <state x="2625" y="366" width="500" height="299" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599825018414">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -598,14 +615,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600340376006" />
-    <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl" timestamp="1600852291344">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="743" y="267" width="424" height="478" key="FileChooserDialogImpl" timestamp="1601558394169">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="267" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600341434857" />
+    <state x="743" y="267" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601558394169" />
     <state x="2663" y="277" width="424" height="478" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600852291344" />
-    <state x="2297" y="424" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1600784213648">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="377" y="408" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1601556654347">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="377" y="408" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601556654347" />
     <state x="2297" y="424" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600784213648" />
     <state x="2599" y="225" width="552" height="582" key="RollbackChangesDialog" timestamp="1600785442457">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -615,10 +633,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2729" y="435" width="292" height="161" key="VCS.ChangelistChooser/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1599565593063" />
-    <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1600787412314">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="555" y="246" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1601556663763">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="246" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600339897326" />
+    <state x="555" y="246" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601556663763" />
     <state x="320" y="246" key="Vcs.Push.Dialog.v2/0.0.3840.1040@0.0.3840.1040" timestamp="1599773359506" />
     <state x="2475" y="255" width="800" height="522" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600787412314" />
     <state x="570" y="132" width="770" height="767" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600337321536">
@@ -642,11 +660,11 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2544" y="238" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600083402160" />
-    <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup" timestamp="1600786374466">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="623" y="238" width="672" height="679" key="search.everywhere.popup" timestamp="1601576694706">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1119" y="78" width="672" height="679" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1600002915880" />
-    <state x="623" y="238" width="672" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600336385140" />
+    <state x="623" y="238" width="672" height="679" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601576694706" />
     <state x="2238" y="78" width="1344" height="679" key="search.everywhere.popup/0.0.3840.1040@0.0.3840.1040" timestamp="1600765601551" />
     <state x="623" y="238" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1599211824127" />
     <state x="3039" y="81" width="672" height="705" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1600786374466" />
