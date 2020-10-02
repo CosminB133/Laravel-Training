@@ -71,9 +71,9 @@ class ProductController extends Controller
         ]);
 
         $product->fill([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price'),
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
         ]);
 
         $product->save();
