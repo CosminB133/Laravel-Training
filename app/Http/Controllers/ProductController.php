@@ -30,14 +30,21 @@ class ProductController extends Controller
         return view('products.show', ['product' => $product, 'reviews' => $product->reviews]);
     }
 
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            'img' => 'required|mimes:jpg,jpeg,png,gif',
+        ]);
+
         $product = new Product();
 
         $product->fill([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price'),
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
         ]);
 
         $product->save();

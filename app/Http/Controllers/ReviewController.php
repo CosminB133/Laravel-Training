@@ -15,16 +15,16 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'product_id' => 'required|exists:products,id',
-                'rating' => 'required',
-                'comments' => 'required',
+            'product_id' => 'required|exists:products,id',
+            'rating' => 'required',
+            'comments' => 'required',
         ]);
 
         $review = new Review();
 
         $review->fill([
-                'comment' => $request->input('comments'),
-                'rating' => $request->input('rating'),
+            'comment' => $request->input('comments'),
+            'rating' => $request->input('rating'),
         ]);
         $review->product()->associate($request->input('product_id'));
 

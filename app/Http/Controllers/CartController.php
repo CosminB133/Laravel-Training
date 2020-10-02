@@ -17,7 +17,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'id' => 'required|exists:products,id'
+            'id' => 'required|exists:products,id'
         ]);
 
         if (
@@ -35,7 +35,7 @@ class CartController extends Controller
     public function destroy(Request $request)
     {
         $request->validate([
-                'id' => 'required|exists:products,id'
+            'id' => 'required|exists:products,id'
         ]);
 
         if (!$request->session()->has('cart')) {
